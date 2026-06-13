@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ozi-Tech Electronics | Professional Repair & Maintenance</title>
     
+    <!-- REQUIREMENT 4: SEARCH ENGINE OPTIMIZATION (SEO) METADATA -->
+    <meta name="description" content="Professional component-level electronics repair and maintenance services for smart televisions, audio systems, amplifiers, and household appliances.">
+    <meta name="keywords" content="Ozi-Tech, electronics repair, TV repair, amplifier repair, audio system maintenance, appliance fix">
+    
     <!-- Link to your external stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -53,17 +57,27 @@
         </section>
 
         <!-- Service Estimator Section -->
-        <section class="estimator-section" style="max-width: 600px; margin: 40px auto; padding: 20px;">
-            <h2>Quick Service Estimator</h2>
-            <p>Select a service to get a baseline repair cost estimation:</p>
-            <select id="serviceSelect" style="width: 100%; padding: 10px; margin: 15px 0; border-radius: 4px;">
+        <section class="estimator-section" style="max-width: 600px; margin: 40px auto; padding: 20px; text-align: center;">
+            <h2 style="text-align: left;">Quick Service Estimator</h2>
+            <p style="text-align: left;">Select a service to get a baseline repair cost estimation:</p>
+            <select id="serviceSelect" style="width: 100%; padding: 10px; margin: 15px 0; border-radius: 4px; text-align: left;">
                 <option value="0">-- Select a Service --</option>
                 <option value="fan">Fan / Small Appliance Maintenance</option>
                 <option value="audio">Audio System / Amplifier Fix</option>
                 <option value="tv">Television Diagnosis & Repair</option>
             </select>
-            <button onclick="calculateEstimate()" style="padding: 10px 20px; cursor: pointer;">Estimate Cost</button>
-            <h3 id="estimateResult" style="margin-top: 15px; color: #2563eb;"></h3>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button onclick="calculateEstimate()" style="padding: 10px 20px; cursor: pointer; font-weight: bold;">Estimate Cost</button>
+                
+                <!-- REQUIREMENT 3: INTERACTIVE TRACK MY REPAIR BUTTON -->
+                <a href="https://wa.me/2348161252189?text=Hello%20Ozi-Tech,%20I%20would%20like%20to%20track%20the%20status%20of%20my%20device%20repair.%20Ticket/Name%20is:%20" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   style="padding: 10px 20px; background-color: #0f172a; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; border: 1px solid #fff; display: inline-block;">
+                   Track My Repair Status 🔍
+                </a>
+            </div>
+            <h3 id="estimateResult" style="margin-top: 15px; color: #2563eb; text-align: left;"></h3>
         </section>
 
         <!-- =================================================== -->
@@ -138,6 +152,12 @@
             <h2 style="text-align: center; margin-bottom: 10px;">Book a Repair / Get a Quote</h2>
             <p style="text-align: center; color: #666; margin-bottom: 20px;">Send details of your faulty device and get a quick diagnostic response.</p>
             
+            <!-- REQUIREMENT 2: WORKSHOP HOURS & LOCATION INFO BLOCK -->
+            <div style="background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 15px; margin-bottom: 20px; border-radius: 0 4px 4px 0; font-size: 0.9rem; color: #334155;">
+                <strong>📍 Workshop Location:</strong> Awka, Anambra State<br>
+                <strong>⏰ Operating Hours:</strong> Monday – Saturday: 8:00 AM – 6:00 PM (Closed Sundays)
+            </div>
+
             <form action="https://formsubmit.co/njezegoodnewsozioma@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
                 
                 <input type="hidden" name="_captcha" value="false">
@@ -162,6 +182,11 @@
                     Describe the Fault:
                     <textarea name="message" rows="4" placeholder="What happens when you turn it on?" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-weight: normal; resize: vertical;"></textarea>
                 </label>
+
+                <!-- REQUIREMENT 1: SERVICE TERMS & SAFETY DISCLAIMER -->
+                <p style="font-size: 0.8rem; color: #64748b; margin: 0; line-height: 1.4;">
+                    * <em>By submitting, you agree that an initial baseline bench check profile may apply. Ozi-Tech is not liable for secondary hidden failures originating from prior severe fluid exposure or grid power surge burns.</em>
+                </p>
 
                 <button type="submit" style="background-color: #2563eb; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.2s; font-size: 1rem;">
                     Submit Repair Request
