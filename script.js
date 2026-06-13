@@ -23,3 +23,19 @@ function calculateEstimate() {
     // Display the result on the webpage
     resultText.innerHTML = estimate;
 }
+// FAQ Accordion Toggle Interaction
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        
+        // Toggle active status for the clicked element
+        faqItem.classList.toggle('active');
+        
+        // Close other open panels smoothly (Optional UX clean-up)
+        document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+            }
+        });
+    });
+});
