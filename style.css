@@ -46,3 +46,55 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Service Grid & Cards */
+.service-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    flex: 1;
+    min-width: 250px;
+    border-top: 4px solid #3498db;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Estimator Box Style */
+.estimator-section {
+    background-color: #eef2f5;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #dcdde1;
+}
+
+select, button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#estimateResult {
+    color: #2c3e50;
+    margin-top: 15px;
+}
