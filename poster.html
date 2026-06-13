@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozi-Tech Social Media Poster</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #020617;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Standard square poster size optimal for Facebook & Instagram grids */
+        .poster-canvas {
+            width: 800px;
+            height: 800px;
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            border: 4px solid #2563eb;
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
+            position: relative;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        /* Technical accent line */
+        .poster-canvas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .logo-text {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo-text span {
+            color: #2563eb;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-top: 5px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            height: 2px;
+            background: rgba(37, 99, 235, 0.3);
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        .services-container {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 10px 0;
+        }
+
+        .services-title {
+            color: #3b82f6;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .service-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .service-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon-box {
+            font-size: 2.2rem;
+            margin-right: 25px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .service-info h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .service-info p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .value-badges {
+            display: flex;
+            justify-content: space-around;
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .footer-section {
+            background: rgba(2, 6, 23, 0.8);
+            border-top: 2px solid rgba(255, 255, 255, 0.05);
+            padding: 20px 10px 5px 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #60a5fa;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-value {
+            font-size: 0.95rem;
+            color: #ffffff;
+            font-weight: 500;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- THE POSTER CONTAINER -->
+    <div class="poster-canvas">
+        
+        <!-- HEADER -->
+        <div class="header-section">
+            <div class="logo-text">Ozi-Tech <span>Electronics</span></div>
+            <div class="tagline">Quality Repairs You Can Trust</div>
+            <div class="divider"></div>
+        </div>
+
+        <!-- SPECIALIZATIONS -->
+        <div class="services-container">
+            <div class="services-title">🛠️ Professional Repair Specializations 🛠️</div>
+            
+            <div class="service-row">
+                <div class="icon-box">📺</div>
+                <div class="service-info">
+                    <h3>Television Repair</h3>
+                    <p>Expert diagnostics for display profiles, power boards, and LED/LCD backlight strip replacements.</p>
+                </div>
+            </div>
+
+            <div class="service-row">
+                <div class="icon-box">🔊</div>
+                <div class="service-info">
+                    <h3>Audio Systems</h3>
+                    <p>Precision tuning and component-level board replacement for amplifiers and home theaters.</p>
+                </div>
+            </div>
+
+            <div class="service-row">
+                <div class="icon-box">🌀</div>
+                <div class="service-info">
+                    <h3>Household Appliances</h3>
+                    <p>Restoring speed and safety to standing fans, vital power supplies, and home electrical modules.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VALUE PROPOSITION BADGES -->
+        <div class="value-badges">
+            <span>⚡ Fast Diagnostics</span>
+            <span>🔬 Bench Work Accuracy</span>
+            <span>🛡️ Parts Warranty</span>
+        </div>
+
+        <!-- FOOTER BRANDING LINKS -->
+        <div class="footer-section">
+            <div class="contact-grid">
+                
+                <!-- WHATSAPP -->
+                <div class="contact-item">
+                    <span class="contact-label">💬 WhatsApp</span>
+                    <span class="contact-value">+234 816 125 2189</span>
+                </div>
+
+                <!-- WEBSITE -->
+                <div class="contact-item">
+                    <span class="contact-label">🌐 Web Platform</span>
+                    <span class="contact-value">njezegoodnewsozioma.github.io/Ozi-Tech-/</span>
+                </div>
+
+                <!-- FACEBOOK -->
+                <div class="contact-item">
+                    <span class="contact-label">📘 Facebook Page</span>
+                    <span class="contact-value">Ozi-Tech Electronics</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
