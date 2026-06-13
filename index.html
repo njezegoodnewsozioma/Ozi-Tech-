@@ -1,440 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css"><head></head></head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ozi-Tech Electronics | Professional Repair & Maintenance</title>
-    <style>
-        /* Modern CSS Variables for easy color management */
-        :root {
-            --primary: #0f172a;       /* Deep slate/navy blue */
-            --accent: #2563eb;        /* Bright electronic blue */
-            --accent-hover: #1d4ed8;  /* Darker blue for interactions */
-            --bg-light: #f8fafc;      /* Light gray background */
-            --text-dark: #334155;     /* Readable text color */
-            --text-light: #ffffff;    /* White text */
-            --card-bg: #ffffff;       /* Card background */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }<header>
-    <h1>Ozi-Tech Electronics</h1>
-    <p>Professional Appliance Repair & Maintenance Services</p>
-</header>
-
-<main>
-    <h2>Our Specializations</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Television Repair</h3>
-            <p>Troubleshooting and fixing display issues, power boards, and backlight failures for LED/LCD TVs.</p>
-        </div>
-        <div class="service-card">
-            <h3>Audio Systems</h3>
-            <p>Expert diagnostic and repair for amplifiers, home theaters, and sound systems.</p>
-        </div>
-        <div class="service-card">
-            <h3>Household Appliances</h3>
-            <p>Restoring functionality to fans, power supplies, and other vital electronic home devices.</p>
-        </div>
-    </div>
-
-    <div class="estimator-section">
-        <h2>Quick Service Estimator</h2>
-        <p>Select a service to get a baseline repair cost estimation:</p>
-        <select id="serviceSelect">
-            <option value="0">-- Select a Service --</option>
-            <option value="fan">Fan / Small Appliance Maintenance</option>
-            <option value="audio">Audio System / Amplifier Fix</option>
-            <option value="tv">Television Diagnosis & Repair</option>
-        </select>
-        <button onclick="calculateEstimate()">Estimate Cost</button>
-        <h3 id="estimateResult"></h3>
-    </div>
-</main>
-
-<footer>
-    <p>&copy; 2026 Ozi-Tech Electronics. Quality Repairs You Can Trust.</p>
-</footer>
-
-<script src="script.js"><!-- Floating WhatsApp Button -->
-<a href="https://wa.me/2348161252189text=Hello,%20I%20have%20an%20electronics%20repair%20inquiry." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-</a></script>
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Navigation Bar */
-        header {
-            background-color: var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--text-light);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-            color: var(--text-light);
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            margin-bottom: 2.5rem;
-        }
-
-        .btn {
-            background-color: var(--accent);
-            color: var(--text-light);
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        /* Services Section */
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
-            color: var(--primary);
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background-color: var(--accent);
-            margin: 0.5rem auto 0;
-            border-radius: 2px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background-color: var(--card-bg);
-            padding: 2.5rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            border-top: 4px solid var(--accent);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        /* Interactive Form Section */
-        .booking-section {
-            background-color: #f1f5f9;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: var(--card-bg);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            border-color: var(--accent);
-        }
-
-        /* Status Banner for JavaScript confirmation */
-        .status-message {
-            display: none;
-            padding: 1rem;
-            margin-top: 1.5rem;
-            border-radius: 4px;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .status-success {
-            background-color: #dcfce7;
-            color: #166534;
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary);
-            color: #94a3b8;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav ul li {
-                margin: 0 1rem;
-            }
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .form-container {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    
+    <!-- Link to your external stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- 1. HEADER / NAVIGATION SECTION -->
     <header>
         <div class="nav-container">
             <div class="logo">Ozi-Tech <span>Electronics</span></div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#repair-request">Book Repair</a></li>
+                    <li><a href="#showcase-section">Our Work</a></li>
+                    <li><a href="#booking-section">Book Repair</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Fast, Reliable Electronics Repair & Maintenance</h1>
-            <p>Expert diagnostic and troubleshooting services for televisions, sound systems, home fans, and more. Get your appliances running smoothly again.</p>
-            <a href="#repair-request" class="btn">Request a Quote</a>
-        </div>
-    </section>
+    <!-- 2. MAIN WEBSITE CONTENT -->
+    <main>
+        <!-- Hero Introduction Banner -->
+        <section class="hero-banner" style="text-align: center; padding: 40px 20px; background-color: #0f172a; color: white; margin-bottom: 30px;">
+            <h1>Professional Appliance Repair & Maintenance Services</h1>
+            <p style="color: #cbd5e1; margin-top: 10px;">Quality Repairs You Can Trust</p>
+        </section>
 
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">📺</div>
-                <h3>Television Repairs</h3>
-                <p>Advanced diagnostic and panel, backlight, or board troubleshooting for LED, LCD, and Smart TVs.</p>
+        <!-- Specializations Section -->
+        <section id="services" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+            <h2 style="text-align: center; margin-bottom: 20px;">Our Specializations</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Television Repair</h3>
+                    <p>Troubleshooting and fixing display issues, power boards, and backlight failures for LED/LCD TVs.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Audio Systems</h3>
+                    <p>Expert diagnostic and repair for amplifiers, home theaters, and sound systems.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Household Appliances</h3>
+                    <p>Restoring functionality to fans, power supplies, and other vital electronic home devices.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🔊</div>
-                <h3>Audio & Sound Systems</h3>
-                <p>Fixing amplifier distortions, wiring faults, power issues, and audio channel clear-ups for home systems.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🌀</div>
-                <h3>Fan & Motor Maintenance</h3>
-                <p>Coil rewinding, bearing replacements, and speed regulation repairs for standing, ceiling, and wall fans.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Interactive Request Section -->
-    <section class="section booking-section" id="repair-request">
-        <h2 class="section-title">Book a Repair Service</h2>
-        <div class="form-container">
-            <form id="repairForm">
-                <div class="form-group">
-                    <label for="customerName">Full Name</label>
-                    <input type="text" id="customerName" class="form-control" placeholder="Enter your name" required>
+        <!-- Service Estimator Section -->
+        <section class="estimator-section" style="max-width: 600px; margin: 40px auto; padding: 20px;">
+            <h2>Quick Service Estimator</h2>
+            <p>Select a service to get a baseline repair cost estimation:</p>
+            <select id="serviceSelect" style="width: 100%; padding: 10px; margin: 15px 0; border-radius: 4px;">
+                <option value="0">-- Select a Service --</option>
+                <option value="fan">Fan / Small Appliance Maintenance</option>
+                <option value="audio">Audio System / Amplifier Fix</option>
+                <option value="tv">Television Diagnosis & Repair</option>
+            </select>
+            <button onclick="calculateEstimate()" style="padding: 10px 20px; cursor: pointer;">Estimate Cost</button>
+            <h3 id="estimateResult" style="margin-top: 15px; color: #2563eb;"></h3>
+        </section>
+
+        <!-- =================================================== -->
+        <!-- FEATURE 2: BEFORE & AFTER SHOWCASE SECTION          -->
+        <!-- =================================================== -->
+        <section id="showcase-section" class="showcase-container">
+            <h2 class="showcase-title">Our Repair Work (Before & After)</h2>
+            <p class="showcase-subtitle">Take a look at some of our recent electronics troubleshooting and repairs.</p>
+            
+            <div class="showcase-grid">
+                <!-- Item 1: Television Repair -->
+                <div class="showcase-card">
+                    <h3>Television Screen Repair</h3>
+                    <div class="image-comparison">
+                        <div class="img-box">
+                            <span class="label before">Before</span>
+                            <img src="images/tv-before.jpg" alt="Broken TV screen" onerror="this.src='https://via.placeholder.com/300x200?text=Before+Repair'">
+                        </div>
+                        <div class="img-box">
+                            <span class="label after">After</span>
+                            <img src="images/tv-after.jpg" alt="Fixed TV screen" onerror="this.src='https://via.placeholder.com/300x200?text=After+Repair'">
+                        </div>
+                    </div>
+                    <p class="card-description">Fixed a distorted display profile and backlight issue on a customer's smart television.</p>
                 </div>
-                <div class="form-group">
-                    <label for="deviceType">Device Type</label>
-                    <select id="deviceType" class="form-control" required>
-                        <option value="" disabled selected>Select your device</option>
-                        <option value="Television">Television</option>
-                        <option value="Audio System">Audio/Sound System</option>
-                        <option value="Fan">Electric Fan</option>
-                        <option value="Other">Other Electronic Device</option>
-                    </select>
+
+                <!-- Item 2: Audio System Mainboard Repair -->
+                <div class="showcase-card">
+                    <h3>Component-Level Mainboard Repair</h3>
+                    <div class="image-comparison">
+                        <div class="img-box">
+                            <span class="label before">Before</span>
+                            <img src="images/board-before.jpg" alt="Damaged circuit board" onerror="this.src='https://via.placeholder.com/300x200?text=Corroded+Board'">
+                        </div>
+                        <div class="img-box">
+                            <span class="label after">After</span>
+                            <img src="images/board-after.jpg" alt="Repaired circuit board" onerror="this.src='https://via.placeholder.com/300x200?text=Cleaned+%26+Soldered'">
+                        </div>
+                    </div>
+                    <p class="card-description">Traced a short circuit in an audio system amplifier, replacing blown capacitors and restoring full sound output.</p>
                 </div>
-                <div class="form-group">
-                    <label for="issueDescription">Describe the Issue</label>
-                    <textarea id="issueDescription" class="form-control" rows="4" placeholder="E.g., TV screen is blank but sound works..." required></textarea>
-                </div>
-                <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
-                <div id="statusBanner" class="status-message"></div>
+            </div>
+        </section>
+
+        <!-- =================================================== -->
+        <!-- FEATURE 1: SERVICE BOOKING / CONTACT FORM           -->
+        <!-- =================================================== -->
+        <section id="booking-section" style="max-width: 600px; margin: 50px auto; padding: 25px; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); font-family: sans-serif;">
+            <h2 style="text-align: center; margin-bottom: 10px;">Book a Repair / Get a Quote</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">Send details of your faulty device and get a quick diagnostic response.</p>
+            
+            <form action="https://formsubmit.co/go.njeze@stu.unizik.edu.ng" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Repair Request at Ozi-Tech!">
+
+                <label style="display: flex; flex-direction: column; font-weight: bold; gap: 5px;">
+                    Your Name:
+                    <input type="text" name="name" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-weight: normal;">
+                </label>
+
+                <label style="display: flex; flex-direction: column; font-weight: bold; gap: 5px;">
+                    Phone Number:
+                    <input type="tel" name="phone" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-weight: normal;">
+                </label>
+
+                <label style="display: flex; flex-direction: column; font-weight: bold; gap: 5px;">
+                    Device Type / Model:
+                    <input type="text" name="device" placeholder="e.g., Skyrun TV, Century Fan, Home Theater" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-weight: normal;">
+                </label>
+
+                <label style="display: flex; flex-direction: column; font-weight: bold; gap: 5px;">
+                    Describe the Fault:
+                    <textarea name="message" rows="4" placeholder="What happens when you turn it on?" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-weight: normal; resize: vertical;"></textarea>
+                </label>
+
+                <button type="submit" style="background-color: #2563eb; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.2s; font-size: 1rem;">
+                    Submit Repair Request
+                </button>
             </form>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Ozi-Tech Electronics. All Rights Reserved.</p>
+    </main>
+
+    <!-- 3. FOOTER SECTION -->
+    <footer style="text-align: center; padding: 20px; background-color: #0f172a; color: white; margin-top: 5px;">
+        <p>&copy; 2026 Ozi-Tech Electronics. Quality Repairs You Can Trust.</p>
     </footer>
 
-    <!-- Interactive Logic Processing -->
-    <script>
-        document.getElementById('repairForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Stop standard page reload
+    <!-- 4. LINK TO JAVASCRIPT FILES -->
+    <script src="script.js"></script>
 
-            // Extract values entered by the user
-            const name = document.getElementById('customerName').value;
-            const device = document.getElementById('deviceType').value;
-            
-            // UI confirmation logic
-            const statusBanner = document.getElementById('statusBanner');
-            statusBanner.innerText = `Thank you, ${name}! Your request for ${device} repair has been received. We will contact you shortly.`;
-            statusBanner.className = "status-message status-success";
+    <!-- =================================================== -->
+    <!-- FLOATING WHATSAPP BUTTON (Sits on top of layout)     -->
+    <!-- =================================================== -->
+    <a href="https://wa.me/2348161252189?text=Hello%20Ozi-Tech,%20I%20have%20an%20electronics%20repair%20inquiry." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
 
-            // Clear form inputs
-            document.getElementById('repairForm').reset();
-        });
-    </script>
 </body>
 </html>
-<section id="booking-section" style="max-width: 500px; margin: 40px auto; padding: 20px; font-family: sans-serif;">
-    <h2 style="text-align: center;">Book a Repair / Get a Quote</h2>
-    
-    <!-- Replace your-email@email.com with your actual email address -->
-    <form action="https://formsubmit.co/your-email@email.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-        
-        <!-- Anti-Spam / Captcha & Redirect configuration -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Repair Request!">
-
-        <label>
-            <strong>Your Name:</strong>
-            <input type="text" name="name" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
-        </label>
-
-        <label>
-            <strong>Phone Number:</strong>
-            <input type="tel" name="phone" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
-        </label>
-
-        <label>
-            <strong>Device Type / Model:</strong>
-            <input type="text" name="device" placeholder="e.g., Samsung TV, Standing Fan, Sound System" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
-        </label>
-
-        <label>
-            <strong>Describe the Fault:</strong>
-            <textarea name="message" rows="4" placeholder="Describe what is wrong with the device..." required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
-        </label>
-
-        <button type="submit" style="background-color: #0056b3; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background-color 0.2s;">
-            Submit Request
-        </button>
-    </form>
-</section>
