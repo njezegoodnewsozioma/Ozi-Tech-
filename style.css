@@ -125,3 +125,65 @@ button:hover {
     width: 35px;
     height: 35px;
 }
+/* FAQ Section Accordion Styles */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 18px 20px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+    background-color: #f8fafc;
+}
+
+.faq-question .arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fdfdfd;
+}
+
+.faq-answer p {
+    padding: 0 20px 20px 20px;
+    color: #475569;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Class to dynamically rotate arrow and open panel via JavaScript */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Adjusts dynamically to fit content */
+}
+
+.faq-item.active .faq-question .arrow {
+    transform: rotate(180deg);
+}
