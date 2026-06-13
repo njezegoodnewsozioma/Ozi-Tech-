@@ -403,3 +403,38 @@
     </script>
 </body>
 </html>
+<section id="booking-section" style="max-width: 500px; margin: 40px auto; padding: 20px; font-family: sans-serif;">
+    <h2 style="text-align: center;">Book a Repair / Get a Quote</h2>
+    
+    <!-- Replace your-email@email.com with your actual email address -->
+    <form action="https://formsubmit.co/your-email@email.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        
+        <!-- Anti-Spam / Captcha & Redirect configuration -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Repair Request!">
+
+        <label>
+            <strong>Your Name:</strong>
+            <input type="text" name="name" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+        </label>
+
+        <label>
+            <strong>Phone Number:</strong>
+            <input type="tel" name="phone" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+        </label>
+
+        <label>
+            <strong>Device Type / Model:</strong>
+            <input type="text" name="device" placeholder="e.g., Samsung TV, Standing Fan, Sound System" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+        </label>
+
+        <label>
+            <strong>Describe the Fault:</strong>
+            <textarea name="message" rows="4" placeholder="Describe what is wrong with the device..." required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+        </label>
+
+        <button type="submit" style="background-color: #0056b3; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background-color 0.2s;">
+            Submit Request
+        </button>
+    </form>
+</section>
