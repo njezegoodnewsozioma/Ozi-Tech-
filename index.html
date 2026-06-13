@@ -21,7 +21,47 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        }<header>
+    <h1>Ozi-Tech Electronics</h1>
+    <p>Professional Appliance Repair & Maintenance Services</p>
+</header>
+
+<main>
+    <h2>Our Specializations</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Television Repair</h3>
+            <p>Troubleshooting and fixing display issues, power boards, and backlight failures for LED/LCD TVs.</p>
+        </div>
+        <div class="service-card">
+            <h3>Audio Systems</h3>
+            <p>Expert diagnostic and repair for amplifiers, home theaters, and sound systems.</p>
+        </div>
+        <div class="service-card">
+            <h3>Household Appliances</h3>
+            <p>Restoring functionality to fans, power supplies, and other vital electronic home devices.</p>
+        </div>
+    </div>
+
+    <div class="estimator-section">
+        <h2>Quick Service Estimator</h2>
+        <p>Select a service to get a baseline repair cost estimation:</p>
+        <select id="serviceSelect">
+            <option value="0">-- Select a Service --</option>
+            <option value="fan">Fan / Small Appliance Maintenance</option>
+            <option value="audio">Audio System / Amplifier Fix</option>
+            <option value="tv">Television Diagnosis & Repair</option>
+        </select>
+        <button onclick="calculateEstimate()">Estimate Cost</button>
+        <h3 id="estimateResult"></h3>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Ozi-Tech Electronics. Quality Repairs You Can Trust.</p>
+</footer>
+
+<script src="script.js"></script>
 
         body {
             background-color: var(--bg-light);
